@@ -22,7 +22,7 @@ function checkForBinaries() {
     fs.mkdirSync(PREBUILD_DIR, { recursive: true })
     for (let native of natives) {
       const filename = `${native.split(".fake")[0]}.node`
-      fs.cpSync(join(readDir, native), join(PREBUILD_DIR, filename))
+      fs.copyFileSync(join(readDir, native), join(PREBUILD_DIR, filename))
     }
   }
 }
